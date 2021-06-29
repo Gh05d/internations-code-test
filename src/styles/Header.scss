@@ -13,10 +13,18 @@
     align-items: center;
     gap: 0.5rem;
     text-transform: uppercase;
+
+    &:hover {
+      color: unset;
+    }
   }
 
   nav {
     height: 100%;
+
+    .active {
+      color: blueviolet;
+    }
 
     ul {
       display: flex;

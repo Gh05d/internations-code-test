@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Navigation from "./Navigation";
+import Groups from "./Groups";
 
 import "./styles/App.scss";
 import "./styles/Header.scss";
-
-import Navigation from "./Navigation";
 
 const App: React.FC<{}> = () => (
   <Router>
@@ -16,25 +16,42 @@ const App: React.FC<{}> = () => (
     />
 
     <header id="app-header">
-      <div className="logo">
+      <Link to="/" className="logo">
         <i className="fa fa-chalkboard-teacher" /> <span>internations</span>
-      </div>
+      </Link>
 
       <Navigation />
     </header>
 
-    <Switch>
-      <Route path="/">
-        <main>
+    <main>
+      <Switch>
+        <Route path="/groups">
+          <Groups />
+        </Route>
+
+        <Route path="/users">
+          <Groups />
+        </Route>
+
+        <Route exact path="/">
           <h1>Welcome to this awesome User Management System</h1>
           <img
-            id="welcome-image"
+            className="hero-image"
             alt="A nice random pic from unsplash"
             src="https://source.unsplash.com/random/"
           />
-        </main>
-      </Route>
-    </Switch>
+        </Route>
+        <Route>
+          <h1>404 - Oops, nothing is here</h1>
+          <img
+            className="hero-image"
+            alt="A nice random pic from unsplash"
+            src="404.png"
+          />
+          <p>Maybe try another route?</p>
+        </Route>
+      </Switch>
+    </main>
 
     <footer>
       <svg width="150" height="150" viewBox="0 0 24 24">

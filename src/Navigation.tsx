@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface Props {}
 
@@ -7,10 +7,14 @@ const Navigation: React.FC<Props> = () => (
   <nav>
     <ul>
       <li>
-        <Link to="/groups">Groups</Link>
+        <NavLink to="/groups" activeClassName="active">
+          Groups
+        </NavLink>
       </li>
       <li>
-        <Link to="/users">Users</Link>
+        <NavLink to="/users" activeClassName="active">
+          Users
+        </NavLink>
       </li>
     </ul>
   </nav>

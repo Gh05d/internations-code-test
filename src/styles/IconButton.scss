@@ -1,0 +1,15 @@
+.icon-button {
+  border: 0;
+  padding: 0.4rem;
+  background: 0;
+
+  &:hover,
+  &:focus {
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 3px #a69e9e;
+  }
+}

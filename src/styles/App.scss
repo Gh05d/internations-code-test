@@ -14,8 +14,8 @@ main {
   z-index: 1;
   position: relative;
 
-  #welcome-image {
-    object-fit: contain;
+  .hero-image {
+    object-fit: cover;
     width: 100%;
     height: auto;
   }
