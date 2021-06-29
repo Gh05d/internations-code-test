@@ -1,0 +1,56 @@
+#banner-image {
+  width: 100%;
+  object-fit: cover;
+  height: 100px;
+  display: none;
+}
+
+@mixin nav-style {
+  height: 50px;
+  background-color: black;
+  color: white;
+  position: sticky;
+  padding: 0 2rem;
+}
+
+#app-header {
+  @include nav-style;
+  z-index: 2;
+  top: 0;
+
+  nav {
+    height: 100%;
+
+    ul {
+      height: 100%;
+      align-items: center;
+    }
+  }
+}
+
+main {
+  min-height: calc(100vh - var(--nav-height));
+  padding: 2rem;
+  background-color: var(--background-body-color);
+  z-index: 1;
+  position: relative;
+}
+
+footer {
+  @include nav-style;
+  height: 200px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
