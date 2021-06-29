@@ -1,10 +1,14 @@
 import * as React from "react";
+import Dexie from "dexie";
 import IconButton from "./IconButton";
 import "./styles/List.scss";
 
-interface Props {}
+interface Props {
+  items: any;
+}
 
-const List: React.FC<Props> = () => {
+const List: React.FC<Props> = props => {
+  console.log("FIRE ~ file: List.tsx ~ line 10 ~ props", props);
   return (
     <ul className="list">
       <li className="list-item">
