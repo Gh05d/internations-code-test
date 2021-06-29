@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import "./App.scss";
+import "./styles/App.scss";
+import "./styles/Header.scss";
+
+import Navigation from "./Navigation";
 
 const App: React.FC<{}> = () => (
   <Router>
@@ -11,25 +14,24 @@ const App: React.FC<{}> = () => (
       src="https://source.unsplash.com/random/2000x100"
       height={100}
     />
+
     <header id="app-header">
-      <nav>
-        <ul>
-          <li>Nav</li>
-          <li>Nav</li>
-          <li>Nav</li>
-          <li>Nav</li>
-          <li>Nav</li>
-          <li>Nav</li>
-          <li>Nav</li>
-        </ul>
-      </nav>
+      <div className="logo">
+        <i className="fa fa-chalkboard-teacher" /> <span>internations</span>
+      </div>
+
+      <Navigation />
     </header>
 
     <Switch>
       <Route path="/">
         <main>
-          <h1>Some Header for the page</h1>
-          <div>Some stuff</div>
+          <h1>Welcome to this awesome User Management System</h1>
+          <img
+            id="welcome-image"
+            alt="A nice random pic from unsplash"
+            src="https://source.unsplash.com/random/"
+          />
         </main>
       </Route>
     </Switch>

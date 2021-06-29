@@ -1,31 +1,10 @@
+@import "../styles/shared/mixins";
+
 #banner-image {
   width: 100%;
   object-fit: cover;
   height: 100px;
   display: none;
-}
-
-@mixin nav-style {
-  height: 50px;
-  background-color: black;
-  color: white;
-  position: sticky;
-  padding: 0 2rem;
-}
-
-#app-header {
-  @include nav-style;
-  z-index: 2;
-  top: 0;
-
-  nav {
-    height: 100%;
-
-    ul {
-      height: 100%;
-      align-items: center;
-    }
-  }
 }
 
 main {
@@ -34,6 +13,12 @@ main {
   background-color: var(--background-body-color);
   z-index: 1;
   position: relative;
+
+  #welcome-image {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
 }
 
 footer {
@@ -41,9 +26,9 @@ footer {
   height: 200px;
   bottom: 0;
   left: 0;
-  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {

@@ -1,0 +1,28 @@
+@import "shared/mixins";
+
+#app-header {
+  @include nav-style;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2;
+  top: 0;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  nav {
+    height: 100%;
+
+    ul {
+      display: flex;
+      gap: 1rem;
+      height: 100%;
+      align-items: center;
+    }
+  }
+}

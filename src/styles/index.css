@@ -40,3 +40,15 @@ ul {
 img {
   display: block;
 }
+
+a {
+  color: unset;
+  text-decoration: none;
+  transition: 300ms color ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: blueviolet;
+  transform: scale(2);
+}
