@@ -1,8 +1,8 @@
 import Dexie from "dexie";
 
 class AppDb extends Dexie {
-  groups!: Dexie.Table<Groups>;
-  users!: Dexie.Table<Users>;
+  groups!: Dexie.Table<Group>;
+  users!: Dexie.Table<User>;
 
   constructor() {
     super("AppDb");

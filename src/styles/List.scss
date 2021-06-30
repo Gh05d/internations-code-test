@@ -1,14 +1,17 @@
 .list {
   display: flex;
-  flex-flow: column;
   gap: 2rem;
+  flex-wrap: wrap;
 
   .list-item {
-    border: 1px solid red;
+    box-shadow: 6px 7px 4px 1px #e9d2d2;
     padding: 1rem;
+    flex: 1 1 400px;
 
     display: grid;
+    grid-row-gap: 1rem;
     grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 
     .name,
     .age {
@@ -21,5 +24,33 @@
       align-items: flex-start;
       gap: 0.2rem;
     }
+
+    .sub-category {
+      border-top: 1px solid black;
+      grid-column: 1 / -1;
+      grid-row: 2 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      position: relative;
+
+      & > * {
+        flex: 1 1 auto;
+      }
+    }
+
+    .list-and-trash {
+      display: flex;
+      gap: 0.2rem;
+      align-items: center;
+    }
+  }
+
+  .checkboxes-form {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-flow: column;
   }
 }

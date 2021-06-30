@@ -11,14 +11,17 @@ const Groups: React.FC<Props> = () => {
   const [name, editName] = React.useState<string>("");
 
   const groups = useLiveQuery(() => db.groups.toArray(), []);
-  console.log("FIRE ~ file: Groups.tsx ~ line 14 ~ groups", groups);
 
   async function createNewGroup(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    await db.groups.add({ name, users: [] });
+    try {
+      e.preventDefault();
+      await db.groups.add({ name, users: [] });
 
-    editName("");
-    toggleCreate(false);
+      editName("");
+      toggleCreate(false);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -31,7 +34,6 @@ const Groups: React.FC<Props> = () => {
       >
         Create New Group
       </button>
-
       {create && (
         <form className="new-form" onSubmit={createNewGroup}>
           <input
@@ -60,10 +62,17 @@ const Groups: React.FC<Props> = () => {
           </button>
         </form>
       )}
+
       {groups ? (
-        <List items={db.groups} />
+        groups.length > 0 ? (
+          <List type="group" items={groups} />
+        ) : (
+          <div>Please create your first group</div>
+        )
       ) : (
-        <div>Please create a new Group</div>
+        <div>
+          Loading... <i className="fa fa-spinner fa-spin" />
+        </div>
       )}
     </div>
   );

@@ -78,10 +78,18 @@ button[type="submit"] {
   background: #ef0107;
 }
 
-input {
+input,
+select,
+option {
   padding: 1rem;
   width: 100%;
   border: none;
+}
+
+input:focus,
+select:focus,
+option:focus {
+  outline: none;
 }
 
 @media screen and (min-width: 500px) {

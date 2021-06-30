@@ -1,10 +1,10 @@
-interface Groups {
+interface Group {
   id?: number;
   name: string;
   users?: Users[];
 }
 
-interface Users {
+interface User {
   id?: number;
   name: string;
   age?: number;
